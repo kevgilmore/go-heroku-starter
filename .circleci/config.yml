@@ -5,6 +5,12 @@ jobs:
       - image: 'circleci/golang:1.9-node'
     steps:
       - checkout
-      - run: go bulid main.go
-      - run: npm install dredd@13.1.2 --global
-      - run: dredd
+      - run:
+          name: Go build
+          command: go build main.go
+      - run:
+          name: Install dredd
+          command: npm install dredd@13.1.2 --global
+      - run:
+          name: Run dredd
+          command: dredd
