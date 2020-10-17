@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'circleci/golang:1.9-node'
+    steps:
+      - checkout
+      - run:
+          name: Go build
+          command: go build main.go
+      - run:
+          name: Install dredd
+          command: sudo npm install dredd@13.1.2 --global
+      - run:
+          name: Run dredd
+          command: dredd
