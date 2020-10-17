@@ -5,11 +5,6 @@ jobs:
       - image: 'circleci/golang:1.9-node'
     steps:
       - checkout
-      - run:
-          name: Install dredd
-          command: sudo npm install dredd@x.x.x --global
-      - run: go run main.go
-      - run: 'dredd apiary.apib http://127.0.0.1:8080'
   dredd:
     docker:
       - image: 'circleci/node:latest'
