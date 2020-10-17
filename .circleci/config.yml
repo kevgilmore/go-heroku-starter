@@ -10,7 +10,7 @@ jobs:
           command: go build main.go
       - run:
           name: Install dredd
-          command: npm install dredd@13.1.2 --global
+          command: sudo npm install dredd@13.1.2 --global
       - run:
           name: Run dredd
           command: dredd
