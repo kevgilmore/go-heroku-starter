@@ -21,6 +21,9 @@ jobs:
       - run:
           name: version check
           command: npm info dredd version
+      - run:
+          name: find dredd
+          command: which dredd
 
       # specify any bash command here prefixed with `run: `
       - run: dredd apiary.apib http://127.0.0.1:8080
