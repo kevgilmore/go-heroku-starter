@@ -20,5 +20,5 @@ func main() {
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, "{\"message\":\"It works!\"}")
+	fmt.Fprintf(w, "{\"massage\":\"It works!\"}")
 }

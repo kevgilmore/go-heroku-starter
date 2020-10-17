@@ -1,30 +1,19 @@
-# Golang CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
   build:
     docker:
-      # specify the version
-      - image: circleci/golang:1.9-node
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
+      - image: 'circleci/golang:1.9-node'
     steps:
       - checkout
       - run:
           name: Install dredd
           command: sudo npm install dredd@x.x.x --global
-      - run:
-          name: version check
-          command: npm info dredd version
-      - run:
-          name: find dredd
-          command: ls /usr/local/bin/
-
-      # specify any bash command here prefixed with `run: `
       - run: go run main.go
-      - run: dredd apiary.apib http://127.0.0.1:8080
+      - run: 'dredd apiary.apib http://127.0.0.1:8080'
+  dredd:
+    docker:
+      - image: 'circleci/node:latest'
+    steps:
+      - checkout
+      - run: npm install dredd@13.1.2 --global
+      - run: dredd
