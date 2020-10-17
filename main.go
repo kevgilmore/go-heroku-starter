@@ -11,9 +11,8 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "8080"
 	}
-	fmt.Print("Now browse to localhost:" + port)
 	http.HandleFunc("/", HelloServer)
 	http.ListenAndServe(":" + port, nil)
 }
