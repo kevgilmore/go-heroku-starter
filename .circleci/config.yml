@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: Install dredd
-          command: sudo npm install dredd@x.x.x
+          command: sudo npm install dredd@x.x.x --global
       - run:
           name: version check
           command: npm info dredd version
