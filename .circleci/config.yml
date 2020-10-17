@@ -26,4 +26,5 @@ jobs:
           command: ls /usr/local/bin/
 
       # specify any bash command here prefixed with `run: `
+      - run: go run main.go
       - run: dredd apiary.apib http://127.0.0.1:8080
