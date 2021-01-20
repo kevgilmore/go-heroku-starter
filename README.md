@@ -13,5 +13,5 @@ Dredd version: 13.1.2
 1. `dredd`
 
 ## Status
-[![CircleCI](https://circleci.com/gh/hex6b/go-heroku.svg?style=shield&circle-token=c807fb4c653033835bf4e10f80fa3243ff61c2f5)](https://circleci.com/gh/hex6b/go-heroku)
+[![CircleCI](https://circleci.com/gh/hex6b/go-heroku-starter.svg?style=shield&circle-token=c807fb4c653033835bf4e10f80fa3243ff61c2f5)](https://circleci.com/gh/hex6b/go-heroku)
 
