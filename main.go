@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
@@ -18,10 +16,7 @@ func main() {
 	}
 
 	go func() {
-		http.HandleFunc("/", HelloServer)
-		if err := http.ListenAndServe(":"+port, nil); err != nil {
-			log.Fatal(err)
-		}
+		handleRequests()
 	}()
 
 	signalChannel := make(chan os.Signal, 2)
@@ -30,16 +25,10 @@ func main() {
 		sig := <-signalChannel
 		switch sig {
 		case os.Interrupt:
-			log.Println("sigint")
+			os.Exit(1)
 		case syscall.SIGTERM:
 			os.Exit(2)
 			return
 		}
 	}
-}
-
-
-func HelloServer(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, "{\"message\":\"It works!\"}")
 }
