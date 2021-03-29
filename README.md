@@ -12,4 +12,4 @@ Dredd version: 13.1.2
 3. Visit http://localhost:8080
 
 ## Running the tests
-1. `dredd`
+1. `go build main.go && dredd`

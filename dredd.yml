@@ -3,7 +3,7 @@ dry-run: null
 hookfiles: null
 language: nodejs
 require: null
-server: go run main.go
+server: ./main
 server-wait: 3
 init: false
 custom: {}
