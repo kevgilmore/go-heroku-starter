@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Go build
-          command: go build main.go
+          command: go build main.go router.go
       - run:
           name: Install dredd
           command: sudo npm install dredd@13.1.2 --global
