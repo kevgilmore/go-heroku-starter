@@ -8,9 +8,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Go dependency resolution
-          command: go mod tidy
-      - run:
           name: Go build
           command: go build main.go router.go
       - run:
