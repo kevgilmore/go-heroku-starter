@@ -8,12 +8,7 @@ import (
 )
 
 func main() {
-	port := os.Getenv("PORT")
-	log.Printf("Started\n")
-
-	if port == "" {
-		port = "8080"
-	}
+	log.Printf("Starting. . .\n")
 
 	go func() {
 		handleRequests()

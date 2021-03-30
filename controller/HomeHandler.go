@@ -7,7 +7,7 @@ import (
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("Content-Type", "application/json")
+	//w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(model.Response{Message: "It works right?"})
+	json.NewEncoder(w).Encode(model.Response{Status: "UP"})
 }
