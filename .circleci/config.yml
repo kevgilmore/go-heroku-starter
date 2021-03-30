@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 'circleci/golang:1.9-node'
+      - image: 'circleci/golang:1.16-node'
     working_directory: /go/src/github.com/hex6b/CircleCI1
     steps:
       - checkout
